@@ -16,7 +16,7 @@ function Thing() {
     loop: { reverse: true },
     from: { position: [0, 2, 1.5] },
     to: { position: [0, 3, 3] },
-    config: { mass: 5, tension: 500, friction: 150, duration: dursec }
+    config: { mass: 5, tension: 500, friction: 150, duration: 3200 }
   })
 
   return (
@@ -35,7 +35,7 @@ function DirLight() {
     loop: { reverse: true },
     from: {position: [5, 5, 5]},
     to: {position: [5, 5, -5]},
-    config: { mass: 5, tension: 500, friction: 150, duration: dur }
+    config: { mass: 5, tension: 500, friction: 150, duration: 10000 }
   })
 
   return (
@@ -80,14 +80,14 @@ export default function Page() {
 
 function Berries_s({ }) {
   const searchParams = useSearchParams()
-  const lat = searchParams.get('lat')
-  const lon = searchParams.get('lng')
-  const start = searchParams.get('dat')
+  const lati = searchParams.get('lat')
+  const loni = searchParams.get('lng')
+  const starti = searchParams.get('dat')
 
   // Oleander/Sunset, Bakersfield, CA, USA
-  // let lati = 35.361964807551146
-  // let loni = -119.01542800174612
-  // let starti = "08-21"
+  let lat = 35.361964807551146
+  let lon = -119.01542800174612
+  let start = "04-26"
 
   const suns = SunPositions(lat, lon, start)
 
